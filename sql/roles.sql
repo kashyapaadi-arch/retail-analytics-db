@@ -24,6 +24,18 @@ GRANT SELECT ON retail_db.product TO 'sales_staff_role'@'%';
 GRANT SELECT ON retail_db.inventory TO 'sales_staff_role'@'%';
 GRANT SELECT ON retail_db.sales_order TO 'sales_staff_role'@'%';
 GRANT SELECT, INSERT ON retail_db.customer TO 'sales_staff_role'@'%';
+GRANT SELECT ON retail_db.category TO 'sales_staff_role'@'%';
+GRANT SELECT ON retail_db.employee TO 'sales_staff_role'@'%';
+GRANT SELECT ON retail_db.order_item TO 'sales_staff_role'@'%';
+GRANT SELECT ON retail_db.supplier TO 'sales_staff_role'@'%';
+GRANT SELECT ON retail_db.supplier_product TO 'sales_staff_role'@'%';
+GRANT SELECT, INSERT ON retail_db.purchase_order TO 'sales_staff_role'@'%';
+GRANT SELECT, INSERT ON retail_db.purchase_order_item TO 'sales_staff_role'@'%';
+GRANT SELECT ON retail_db.stock_alert TO 'sales_staff_role'@'%';
+GRANT SELECT ON retail_db.monthly_sales_summary TO 'sales_staff_role'@'%';
+GRANT SELECT ON retail_db.low_stock_products TO 'sales_staff_role'@'%';
+GRANT SELECT ON retail_db.abc_classification TO 'sales_staff_role'@'%';
+GRANT SELECT ON retail_db.audit_log TO 'sales_staff_role'@'%';
 GRANT EXECUTE ON PROCEDURE retail_db.place_order TO 'sales_staff_role'@'%';
 
 GRANT 'admin_role'@'%' TO 'admin_user'@'%';

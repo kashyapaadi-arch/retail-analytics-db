@@ -91,3 +91,6 @@ CREATE TABLE IF NOT EXISTS demand_forecast (
     INDEX idx_demand_forecast_month (forecast_month)
 ) ENGINE=InnoDB;
 
+-- The Streamlit sales role needs warehouse reads for dashboard and forecast pages.
+GRANT SELECT ON retail_dw.* TO 'sales_staff_role'@'%';
+
