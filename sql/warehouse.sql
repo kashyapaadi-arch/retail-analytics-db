@@ -75,3 +75,19 @@ CREATE TABLE IF NOT EXISTS fact_sales (
     INDEX idx_fact_sales_employee (employee_key)
 ) ENGINE=InnoDB;
 
+CREATE TABLE IF NOT EXISTS demand_forecast (
+    product_id INT UNSIGNED NOT NULL,
+    forecast_month DATE NOT NULL,
+    model_name ENUM('moving_average', 'linear_regression') NOT NULL,
+    predicted_units DECIMAL(12, 2) NOT NULL,
+    mae DECIMAL(12, 4) NULL,
+    mape DECIMAL(9, 4) NULL,
+    generated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT pk_demand_forecast PRIMARY KEY (product_id, forecast_month, model_name),
+    CONSTRAINT fk_demand_forecast_product FOREIGN KEY (product_id)
+        REFERENCES dim_product (product_id)
+        ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT chk_demand_forecast_units CHECK (predicted_units >= 0),
+    INDEX idx_demand_forecast_month (forecast_month)
+) ENGINE=InnoDB;
+

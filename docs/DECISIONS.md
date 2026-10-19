@@ -17,4 +17,7 @@ This file records implementation choices where the project brief leaves behavior
 | Passwords | SQL role passwords are visibly marked placeholders and must be changed before use. No user credential is committed. |
 | Report placeholders | `<REG_NO>` and `<SUPERVISOR_NAME>` are retained verbatim because values were not supplied. |
 | Time handling | SQL timestamps use the MySQL server's configured time zone; Python-generated datetimes are naive local wall times for compatibility with MySQL `DATETIME`. |
+| Forecast evaluation | Each product's monthly series is ordered chronologically; the earliest 80% trains the linear regression and the latest 20% is held out. MAPE excludes months with zero actual demand and is null if all held-out values are zero. |
+| Forecast safety stock | Use 1.65 times the standard deviation of recent monthly demand as a one-month lead-time buffer (approximately 95% service under a normal-demand assumption); order suggestion is rounded up to a whole unit. |
+| Draft purchase orders | Drafting is opt-in (`--draft-orders`) to prevent a routine forecast refresh from creating duplicate pending purchase orders. |
 
