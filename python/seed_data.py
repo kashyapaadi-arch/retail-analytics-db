@@ -15,6 +15,9 @@ from faker import Faker
 SEED = 20261019
 ORDER_COUNT = 2_000
 CORE_TABLES = (
+    "price_history",
+    "audit_log",
+    "stock_alert",
     "order_item",
     "sales_order",
     "purchase_order_item",
