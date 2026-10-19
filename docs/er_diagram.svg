@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="1060" viewBox="0 0 1640 1060">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="40" y="52" font-family="Arial,sans-serif" font-size="28" font-weight="bold" fill="#17324d">Sales and Inventory Analytics Database — Core ERD</text>
+<path d="M370 202.0 L410.0 202.0 L410.0 202.0 L450 202.0" fill="none" stroke="#52708b" stroke-width="2"/>
+<text x="414.0" y="196.0" font-family="Arial,sans-serif" font-size="14" fill="#294b68">1  ──  0..*</text>
+<path d="M780 202.0 L820.0 202.0 L820.0 202.0 L860 202.0" fill="none" stroke="#52708b" stroke-width="2"/>
+<text x="824.0" y="196.0" font-family="Arial,sans-serif" font-size="14" fill="#294b68">1  ──  0..*</text>
+<path d="M370 457.0 L410.0 457.0 L410.0 457.0 L450 457.0" fill="none" stroke="#52708b" stroke-width="2"/>
+<text x="414.0" y="451.0" font-family="Arial,sans-serif" font-size="14" fill="#294b68">1  ──  0..*</text>
+<path d="M615.0 274 L615.0 274 L615.0 385 L615.0 385" fill="none" stroke="#52708b" stroke-width="2"/>
+<text x="619.0" y="323.5" font-family="Arial,sans-serif" font-size="14" fill="#294b68">1  ──  0..*</text>
+<path d="M205.0 529 L205.0 529 L205.0 640 L205.0 640" fill="none" stroke="#52708b" stroke-width="2"/>
+<text x="209.0" y="578.5" font-family="Arial,sans-serif" font-size="14" fill="#294b68">1  ──  0..*</text>
+<path d="M370 712.0 L410.0 712.0 L410.0 712.0 L450 712.0" fill="none" stroke="#52708b" stroke-width="2"/>
+<text x="414.0" y="706.0" font-family="Arial,sans-serif" font-size="14" fill="#294b68">1  ──  0..*</text>
+<path d="M615.0 274 L615.0 274 L615.0 640 L615.0 640" fill="none" stroke="#52708b" stroke-width="2"/>
+<text x="619.0" y="451.0" font-family="Arial,sans-serif" font-size="14" fill="#294b68">1  ──  0..*</text>
+<path d="M370 942.0 L615.0 942.0 L615.0 942.0 L860 942.0" fill="none" stroke="#52708b" stroke-width="2"/>
+<text x="619.0" y="936.0" font-family="Arial,sans-serif" font-size="14" fill="#294b68">1  ──  0..*</text>
+<path d="M780 942.0 L820.0 942.0 L820.0 942.0 L860 942.0" fill="none" stroke="#52708b" stroke-width="2"/>
+<text x="824.0" y="936.0" font-family="Arial,sans-serif" font-size="14" fill="#294b68">1  ──  0..*</text>
+<path d="M1190 942.0 L1230.0 942.0 L1230.0 942.0 L1270 942.0" fill="none" stroke="#52708b" stroke-width="2"/>
+<text x="1234.0" y="936.0" font-family="Arial,sans-serif" font-size="14" fill="#294b68">1  ──  0..*</text>
+<path d="M615.0 274 L1025.0 274 L1025.0 870 L1435.0 870" fill="none" stroke="#52708b" stroke-width="2"/>
+<text x="1029.0" y="566.0" font-family="Arial,sans-serif" font-size="14" fill="#294b68">1  ──  0..*</text>
+<rect x="40" y="130" width="330" height="144" rx="7" fill="#fff" stroke="#9db1c4" stroke-width="2"/>
+<path d="M47 130 H363 Q370 130 370 137 V173 H40 V137 Q40 130 47 130" fill="#e8f1f8"/>
+<text x="54" y="159" font-family="Arial,sans-serif" font-size="19" font-weight="bold" fill="#17324d">category</text>
+<text x="54" y="197" font-family="Arial,sans-serif" font-size="15" fill="#52677b">PK category_id</text>
+<text x="54" y="217" font-family="Arial,sans-serif" font-size="15" fill="#52677b">UQ name</text>
+<rect x="450" y="130" width="330" height="144" rx="7" fill="#fff" stroke="#9db1c4" stroke-width="2"/>
+<path d="M457 130 H773 Q780 130 780 137 V173 H450 V137 Q450 130 457 130" fill="#e8f1f8"/>
+<text x="464" y="159" font-family="Arial,sans-serif" font-size="19" font-weight="bold" fill="#17324d">product</text>
+<text x="464" y="197" font-family="Arial,sans-serif" font-size="15" fill="#52677b">PK product_id</text>
+<text x="464" y="217" font-family="Arial,sans-serif" font-size="15" fill="#52677b">FK category_id</text>
+<text x="464" y="237" font-family="Arial,sans-serif" font-size="15" fill="#52677b">unit_price · cost_price</text>
+<text x="464" y="257" font-family="Arial,sans-serif" font-size="15" fill="#52677b">reorder_level</text>
+<rect x="860" y="130" width="330" height="144" rx="7" fill="#fff" stroke="#9db1c4" stroke-width="2"/>
+<path d="M867 130 H1183 Q1190 130 1190 137 V173 H860 V137 Q860 130 867 130" fill="#e8f1f8"/>
+<text x="874" y="159" font-family="Arial,sans-serif" font-size="19" font-weight="bold" fill="#17324d">inventory</text>
+<text x="874" y="197" font-family="Arial,sans-serif" font-size="15" fill="#52677b">PK/FK product_id</text>
+<text x="874" y="217" font-family="Arial,sans-serif" font-size="15" fill="#52677b">quantity_in_stock</text>
+<text x="874" y="237" font-family="Arial,sans-serif" font-size="15" fill="#52677b">last_updated</text>
+<rect x="40" y="385" width="330" height="144" rx="7" fill="#fff" stroke="#9db1c4" stroke-width="2"/>
+<path d="M47 385 H363 Q370 385 370 392 V428 H40 V392 Q40 385 47 385" fill="#e8f1f8"/>
+<text x="54" y="414" font-family="Arial,sans-serif" font-size="19" font-weight="bold" fill="#17324d">supplier</text>
+<text x="54" y="452" font-family="Arial,sans-serif" font-size="15" fill="#52677b">PK supplier_id</text>
+<text x="54" y="472" font-family="Arial,sans-serif" font-size="15" fill="#52677b">name · contact · city</text>
+<rect x="450" y="385" width="330" height="144" rx="7" fill="#fff" stroke="#9db1c4" stroke-width="2"/>
+<path d="M457 385 H773 Q780 385 780 392 V428 H450 V392 Q450 385 457 385" fill="#e8f1f8"/>
+<text x="464" y="414" font-family="Arial,sans-serif" font-size="19" font-weight="bold" fill="#17324d">supplier_product</text>
+<text x="464" y="452" font-family="Arial,sans-serif" font-size="15" fill="#52677b">PK/FK supplier_id</text>
+<text x="464" y="472" font-family="Arial,sans-serif" font-size="15" fill="#52677b">PK/FK product_id</text>
+<text x="464" y="492" font-family="Arial,sans-serif" font-size="15" fill="#52677b">supply_price</text>
+<rect x="40" y="640" width="330" height="144" rx="7" fill="#fff" stroke="#9db1c4" stroke-width="2"/>
+<path d="M47 640 H363 Q370 640 370 647 V683 H40 V647 Q40 640 47 640" fill="#e8f1f8"/>
+<text x="54" y="669" font-family="Arial,sans-serif" font-size="19" font-weight="bold" fill="#17324d">purchase_order</text>
+<text x="54" y="707" font-family="Arial,sans-serif" font-size="15" fill="#52677b">PK po_id</text>
+<text x="54" y="727" font-family="Arial,sans-serif" font-size="15" fill="#52677b">FK supplier_id</text>
+<text x="54" y="747" font-family="Arial,sans-serif" font-size="15" fill="#52677b">order_date · status</text>
+<rect x="450" y="640" width="330" height="144" rx="7" fill="#fff" stroke="#9db1c4" stroke-width="2"/>
+<path d="M457 640 H773 Q780 640 780 647 V683 H450 V647 Q450 640 457 640" fill="#e8f1f8"/>
+<text x="464" y="669" font-family="Arial,sans-serif" font-size="19" font-weight="bold" fill="#17324d">purchase_order_item</text>
+<text x="464" y="707" font-family="Arial,sans-serif" font-size="15" fill="#52677b">PK/FK po_id</text>
+<text x="464" y="727" font-family="Arial,sans-serif" font-size="15" fill="#52677b">PK/FK product_id</text>
+<text x="464" y="747" font-family="Arial,sans-serif" font-size="15" fill="#52677b">quantity · unit_cost</text>
+<rect x="40" y="870" width="330" height="144" rx="7" fill="#fff" stroke="#9db1c4" stroke-width="2"/>
+<path d="M47 870 H363 Q370 870 370 877 V913 H40 V877 Q40 870 47 870" fill="#e8f1f8"/>
+<text x="54" y="899" font-family="Arial,sans-serif" font-size="19" font-weight="bold" fill="#17324d">customer</text>
+<text x="54" y="937" font-family="Arial,sans-serif" font-size="15" fill="#52677b">PK customer_id</text>
+<text x="54" y="957" font-family="Arial,sans-serif" font-size="15" fill="#52677b">UQ phone</text>
+<text x="54" y="977" font-family="Arial,sans-serif" font-size="15" fill="#52677b">name · city · join_date</text>
+<rect x="450" y="870" width="330" height="144" rx="7" fill="#fff" stroke="#9db1c4" stroke-width="2"/>
+<path d="M457 870 H773 Q780 870 780 877 V913 H450 V877 Q450 870 457 870" fill="#e8f1f8"/>
+<text x="464" y="899" font-family="Arial,sans-serif" font-size="19" font-weight="bold" fill="#17324d">employee</text>
+<text x="464" y="937" font-family="Arial,sans-serif" font-size="15" fill="#52677b">PK employee_id</text>
+<text x="464" y="957" font-family="Arial,sans-serif" font-size="15" fill="#52677b">name · role · hire_date</text>
+<rect x="860" y="870" width="330" height="144" rx="7" fill="#fff" stroke="#9db1c4" stroke-width="2"/>
+<path d="M867 870 H1183 Q1190 870 1190 877 V913 H860 V877 Q860 870 867 870" fill="#e8f1f8"/>
+<text x="874" y="899" font-family="Arial,sans-serif" font-size="19" font-weight="bold" fill="#17324d">sales_order</text>
+<text x="874" y="937" font-family="Arial,sans-serif" font-size="15" fill="#52677b">PK order_id</text>
+<text x="874" y="957" font-family="Arial,sans-serif" font-size="15" fill="#52677b">FK customer_id · employee_id</text>
+<text x="874" y="977" font-family="Arial,sans-serif" font-size="15" fill="#52677b">order_date · payment_mode</text>
+<text x="874" y="997" font-family="Arial,sans-serif" font-size="15" fill="#52677b">total_amount</text>
+<rect x="1270" y="870" width="330" height="144" rx="7" fill="#fff" stroke="#9db1c4" stroke-width="2"/>
+<path d="M1277 870 H1593 Q1600 870 1600 877 V913 H1270 V877 Q1270 870 1277 870" fill="#e8f1f8"/>
+<text x="1284" y="899" font-family="Arial,sans-serif" font-size="19" font-weight="bold" fill="#17324d">order_item</text>
+<text x="1284" y="937" font-family="Arial,sans-serif" font-size="15" fill="#52677b">PK/FK order_id</text>
+<text x="1284" y="957" font-family="Arial,sans-serif" font-size="15" fill="#52677b">PK/FK product_id</text>
+<text x="1284" y="977" font-family="Arial,sans-serif" font-size="15" fill="#52677b">quantity · unit_price</text>
+<text x="1284" y="997" font-family="Arial,sans-serif" font-size="15" fill="#52677b">discount_pct</text>
+</svg>
