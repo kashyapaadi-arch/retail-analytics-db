@@ -154,13 +154,27 @@ def _suggestions() -> pd.DataFrame:
                SELECT supplier_id, product_id, supply_price,
                       ROW_NUMBER() OVER (PARTITION BY product_id ORDER BY supply_price,supplier_id) AS rank_no
                FROM supplier_product
+           ), monthly_demand AS (
+               SELECT p.product_id, DATE_FORMAT(d.full_date,'%Y-%m-01') AS month_start, SUM(f.quantity) AS units
+               FROM retail_dw.fact_sales f
+               JOIN retail_dw.dim_date d ON d.date_key=f.date_key
+               JOIN retail_dw.dim_product p ON p.product_key=f.product_key
+               GROUP BY p.product_id, DATE_FORMAT(d.full_date,'%Y-%m-01')
+           ), recent_demand AS (
+               SELECT product_id, units,
+                      ROW_NUMBER() OVER (PARTITION BY product_id ORDER BY month_start DESC) AS month_rank
+               FROM monthly_demand
+           ), safety AS (
+               SELECT product_id, CEIL(1.65 * COALESCE(STDDEV_SAMP(units),0)) AS safety_stock
+               FROM recent_demand WHERE month_rank <= 6 GROUP BY product_id
            )
            SELECT p.product_id, p.name AS product, b.forecast_month, b.predicted_units,
-                  p.reorder_level AS safety_stock, i.quantity_in_stock,
-                  GREATEST(0, CEIL(b.predicted_units + p.reorder_level - i.quantity_in_stock)) AS suggested_order_qty,
+                  COALESCE(safety.safety_stock,0) AS safety_stock, i.quantity_in_stock,
+                  GREATEST(0, CEIL(b.predicted_units + COALESCE(safety.safety_stock,0) - i.quantity_in_stock)) AS suggested_order_qty,
                   c.supplier_id, s.name AS supplier_name, c.supply_price
            FROM best b JOIN product p ON p.product_id=b.product_id
            JOIN inventory i ON i.product_id=p.product_id
+           LEFT JOIN safety ON safety.product_id=p.product_id
            LEFT JOIN cheapest c ON c.product_id=p.product_id AND c.rank_no=1
            LEFT JOIN supplier s ON s.supplier_id=c.supplier_id
            WHERE b.rank_no=1 ORDER BY suggested_order_qty DESC, p.name"""
